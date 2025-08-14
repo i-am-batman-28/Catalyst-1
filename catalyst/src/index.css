@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'Cubao';
+  src: url('./assets/fonts/cubao.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --bg: #201433;
+  --bg2: #0f0a1a;
+  --panel: rgba(24, 16, 38, 0.75);
+  --text: #e6eef5;
+  --muted: #c7c2d9;
+  --brand: #46c2ff;
+  --accent: #ff6ad5;
+  --accent2: #ffd166;
+  --radius-lg: 0px;
+  --radius-sm: 0px;
+  --shadow: 0 6px 0 rgba(0,0,0,0.5);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: radial-gradient(120% 80% at 50% 0%, var(--bg) 0%, var(--bg2) 70%);
+  color: var(--text);
+}
+
+/* Pixel utilities */
+.pixel-font { font-family: 'Press Start 2P', monospace; }
+.pixel-border { border: 4px solid #ffffff; outline: 2px solid #000; box-shadow: var(--shadow); }
+.pixel-card { border: 4px solid #3ad0ff; outline: 2px solid #000; box-shadow: var(--shadow); border-radius: 0; }
+img, canvas { image-rendering: pixelated; }
+
+/* Layout utilities */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.section-title {
+  font-size: 36px;
+  text-align: center;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.TimeLine {
+  margin: 0 auto ;
+}
+
+.TimeLineElement {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-left: 0px;
+}
+

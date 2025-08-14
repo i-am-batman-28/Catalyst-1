@@ -1,0 +1,17 @@
+.catalyst {
+    font-size: 200%;
+    font-weight: bold;
+    color: #5493a4;
+    font-family: 'Cubao';
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-top: 20px;
+}
+
+.catalyst img {
+    width: 60%;
+    height: 60%;    
+    display: block;
+    margin : 0px auto;
+    margin-top : 30px;
+}

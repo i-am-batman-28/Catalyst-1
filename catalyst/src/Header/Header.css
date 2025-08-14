@@ -1,0 +1,44 @@
+.header .nav-bar{
+    padding :10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:12px;
+}
+
+.header .nav-bar a {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 10px; /* spacing between items */
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 0;
+    border: 4px solid #fff;
+    outline: 2px solid #000;
+    background-color: #1b1230;
+    transition: transform .08s ease;
+}
+
+.header .nav-bar a:hover,
+.header .nav-bar a:focus,
+.header .nav-bar a.active {
+    color: #ffffff;
+    background-color: #2a184a;
+    transform: translateY(-2px);
+}
+
+.header {
+    position: sticky;
+    top: 32px;
+    z-index: 10;
+    max-width: 620px;
+    margin: auto;
+    margin-top : 20px;
+    background-color: var(--panel);
+    backdrop-filter: blur(0px);
+    border-radius: 0;
+    box-shadow: var(--shadow);
+    border: 4px solid #fff;
+    outline: 2px solid #000;
+}

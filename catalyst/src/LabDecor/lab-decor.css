@@ -1,0 +1,40 @@
+.hero-2d {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .pixel-shelf { display: none; }
+  .cryo-tank { left: 4vw; top: 18vh; width: 120px; }
+}
+
+.pixel-shelf {
+  position: absolute;
+  right: 4vw;
+  top: 22vh;
+  width: min(28vw, 380px);
+  height: auto;
+}
+
+.cryo-tank {
+  position: absolute;
+  left: 2vw;
+  top: 16vh;
+  width: min(14vw, 160px);
+  height: auto;
+}
+
+.bob { animation: bob 3s ease-in-out infinite; }
+@keyframes bob {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-2px); }
+}
+
+.rise { animation: rise 5s linear infinite; opacity: 0.7; }
+@keyframes rise {
+  0% { transform: translateY(0); opacity: 0; }
+  20% { opacity: 0.6; }
+  100% { transform: translateY(-60px); opacity: 0; }
+} 

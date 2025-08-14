@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+
+    --background-color: #112e42;
+
+    --main-color:       #46c2ff;
+
+    --htm-color:        #ff8256;
+
+    --javascript-color: #ffd166;
+
+    --reactjs-color:    #46c2ff;
+
+    --nodejs-color:     #6caa48;
+
+    --expressjs-color:  #01041d;
+
+    --mongodb-color:    #599636;
+
+    --php-color:        #8a76ff;
+
+}
+
+.main h1 {
+    margin-top: 24px;
+    margin-bottom: 8px;
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    font-family: 'Press Start 2P', monospace;
+}
+
+.main h1 span {
+    color: var(--main-color);
+}
+
+.timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: 48px auto;
+    padding-inline: 24px;
+}
+
+.container {
+    padding: 16px 32px;
+    position: relative;
+    width: 46%;
+    animation: movedown 1s linear forwards;
+    opacity: 0;
+}
+
+@keyframes movedown {
+
+    0% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+}
+
+.container:nth-child(1) {   animation-delay: 0s ;   }
+    
+.container:nth-child(2) {   animation-delay: 1s ;   }
+
+.container:nth-child(3) {   animation-delay: 2s ;   }
+
+.container:nth-child(4) {   animation-delay: 3s ;   }
+
+.container:nth-child(5) {   animation-delay: 4s ;   }
+
+.container:nth-child(6) {   animation-delay: 5s ;   }
+
+.container:nth-child(7) {   animation-delay: 6s ;   }
+
+
+.text-box {
+    padding: 20px 30px;
+    background: #1b1230;
+    position: relative;
+    border-radius: 0;
+    font-size: 15px;
+    border: 4px solid #ffffff;
+    outline: 2px solid #000;
+    color: #e6eef5;
+}
+
+.htmltext { color: var(--htm-color); }
+.javascripttext { color: var(--javascript-color); }
+.reactjstext { color: var(--reactjs-color); }
+.nodejstext { color: var(--nodejs-color); }
+.expressjstext { color: var(--expressjs-color); }
+.mongodbext { color: var(--mongodb-color); }
+.phptext { color: var(--php-color); }
+
+.company {
+    color: var(--main-color);
+    font-weight: bold;
+    letter-spacing: .1rem;
+}
+
+.htmlcard { border: 4px solid var(--htm-color); }
+.javascriptcard { border: 4px solid var(--javascript-color); }
+.reactjscard { border: 4px solid var(--reactjs-color); }
+.nodejscard { border: 4px solid var(--nodejs-color); }
+.expressjscard { border: 4px solid var(--expressjs-color); }
+.mongodbcard { border: 4px solid var(--mongodb-color); }
+.phpcard { border: 4px solid var(--php-color); }
+
+.left-container { left: 0; }
+.right-container { left: 46%; }
+
+.container img {
+    position: absolute;
+    width: 40px;
+    border-radius: 0;
+    right: -12px;
+    top: 32px;
+    z-index: 10;
+    border: 4px solid #fff;
+    outline: 2px solid #000;
+    background: #1b1230;
+}
+
+.right-container img { left: -12px; }
+
+/* prevent overflow clipping */
+.container,
+.text-box { overflow: visible; }
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: var(--main-color);
+    top: 0;
+    left: 46%;
+    margin-left: -3px;
+    z-index: -1;
+    animation: moveline 6s linear forwards;
+}
+
+@keyframes moveline {
+    0% { height: 0; }
+    100% { height: 100%; }
+}
+
+.text-box small { display: inline-block; margin-bottom: 15px; }
+
+.left-container-arrow,
+.right-container-arrow {
+    height: 0; width: 100px; position: absolute; top: 38px; z-index: -1;
+}
+
+.left-container-arrow { right: -12px; border: 5px solid var(--htm-color); }
+.right-container-arrow { left: -12px; }
+
+.javascriptarrow { border: 5px solid var(--javascript-color); }
+.reactjsarrow { border: 5px solid var(--reactjs-color); }
+.nodejsarrow { border: 5px solid var(--nodejs-color); }
+.expressjsarrow { border: 5px solid var(--expressjs-color); }
+.mongodbarrow { border: 5px solid var(--mongodb-color); }
+.phparrow { border: 5px solid var(--php-color); }
+
+/* Responsive Timeline */
+@media screen and (max-width: 900px) {
+    .timeline { margin: 32px auto; }
+    .timeline::after { left: 28px; }
+    .container { width: 100%; padding-left: 64px; padding-right: 24px; }
+    .text-box { font-size: 13px; }
+    .text-box small { margin-bottom: 10px; }
+    .right-container { left: 0; }
+    .container { padding: 10px 24px; }
+    .right-container img, .left-container img { left: 10px; }
+    .left-container-arrow, .right-container-arrow { left: -15px; }
+}
