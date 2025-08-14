@@ -1,4 +1,5 @@
 import { Canvas, useFrame } from '@react-three/fiber';
+import ParticleStream from './ParticleStream.jsx';
 import { OrbitControls, Stars } from '@react-three/drei';
 import { useRef } from 'react';
 
@@ -11,14 +12,7 @@ function Planet() {
 	return (
 		<group position={[ -6.2, 2.6, -6 ]} rotation={[0.45, 0.1, 0.0]}>
 			<group ref={spin}>
-				<mesh>
-					<sphereGeometry args={[1.35, 32, 32]} />
-					<meshStandardMaterial color={'#8a76ff'} emissive={'#3b2fa1'} emissiveIntensity={0.28} />
-				</mesh>
-				<mesh rotation={[1.1, 0, 0]}>
-					<torusGeometry args={[1.95, 0.05, 8, 64]} />
-					<meshBasicMaterial color={'#46c2ff'} />
-				</mesh>
+				<ParticleStream />
 			</group>
 		</group>
 	);
@@ -37,8 +31,12 @@ function RotatingStars() {
 export default function LabHero() {
 	return (
 		<div className="hero-3d">
-			<Canvas camera={{ position: [0, 2.6, 7], fov: 55 }} dpr={[1, 1.5]}
-				gl={{ antialias: true, powerPreference: 'high-performance' }}>
+			<Canvas 
+				camera={{ position: [0, 2.6, 7], fov: 55 }} 
+				dpr={[1, 1.5]}
+				gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
+				style={{ width: '100%', height: '100%' }}
+			>
 				<ambientLight intensity={0.55} />
 				<directionalLight position={[5, 7, 5]} intensity={0.9} />
 				<RotatingStars />
