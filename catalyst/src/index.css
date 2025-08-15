@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 @font-face {
   font-family: 'Cubao';
   src: url('./assets/fonts/cubao.otf') format('opentype');
@@ -5,8 +7,6 @@
   font-style: normal;
   font-display: swap;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
   --bg: #201433;
