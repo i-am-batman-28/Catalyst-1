@@ -10,7 +10,7 @@ function ParticleStream({ count = 5000 }) {
     for (let i = 0; i < count; i++) {
       const time = Math.random() * 100;
       const factor = 20 + Math.random() * 100;
-      const speed = 0.000001 + Math.random() / 200;
+      const speed = 0.01 + Math.random() / 200;
       const x = (Math.random() - 0.5) * 40;
       const y = (Math.random() - 0.5) * 40;
       const z = (Math.random() - 0.5) * 40;
@@ -45,7 +45,7 @@ function ParticleStream({ count = 5000 }) {
 
   return (
     <instancedMesh ref={mesh} args={[null, null, count]}>
-      <sphereGeometry args={[0.08, 16, 16]} />
+      <sphereGeometry args={[0.03, 8, 8]} />
       <meshStandardMaterial color="#f0f0f0" emissive="#ffffff" emissiveIntensity={0.3} roughness={0.2} metalness={0.7} />
     </instancedMesh>
   );

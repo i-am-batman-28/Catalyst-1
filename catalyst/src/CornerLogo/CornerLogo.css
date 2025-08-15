@@ -1,0 +1,27 @@
+.corner-logo {
+  position: absolute;
+  top: 18px; /* clearly visible below page edge */
+  left: 24px;
+  z-index: 60; /* above nav bar */
+  width: clamp(64px, 8vw, 120px);
+  height: clamp(64px, 8vw, 120px);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent; /* no background, show circular logo only */
+}
+
+.corner-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+  pointer-events: auto;
+  filter: drop-shadow(0 4px 20px rgba(70, 194, 255, 0.35));
+}
+
+@media (max-width: 768px) {
+  .corner-logo { top: 14px; left: 14px; width: clamp(56px, 12vw, 80px); height: clamp(56px, 12vw, 80px); }
+}

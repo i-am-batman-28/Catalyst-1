@@ -1,7 +1,7 @@
 import { Canvas, useFrame } from '@react-three/fiber';
 import ParticleStream from './ParticleStream.jsx';
 import { OrbitControls, Stars } from '@react-three/drei';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 function Planet() {
 	const spin = useRef();
@@ -10,9 +10,9 @@ function Planet() {
 		spin.current.rotation.y += 0.005; // slower, more realistic axial spin
 	});
 	return (
-		<group position={[ -6.2, 2.6, -6 ]} rotation={[0.45, 0.1, 0.0]}>
+		<group position={[ 0, 0, 0 ]} rotation={[0.0, 0.0, 0.0]}>
 			<group ref={spin}>
-				<ParticleStream />
+				<ParticleStream count={7000} />
 			</group>
 		</group>
 	);
@@ -29,20 +29,35 @@ function RotatingStars() {
 }
 
 export default function LabHero() {
-	return (
-		<div className="hero-3d">
-			<Canvas 
-				camera={{ position: [0, 2.6, 7], fov: 55 }} 
-				dpr={[1, 1.5]}
-				gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
-				style={{ width: '100%', height: '100%' }}
-			>
-				<ambientLight intensity={0.55} />
-				<directionalLight position={[5, 7, 5]} intensity={0.9} />
-				<RotatingStars />
-				<Planet />
-				<OrbitControls enableZoom={false} enablePan={false} />
-			</Canvas>
-		</div>
-	);
+    const [opacity, setOpacity] = useState(1);
+
+    useEffect(() => {
+        const onScroll = () => {
+            const hero = document.getElementById('hero');
+            const heroH = hero ? hero.offsetHeight : window.innerHeight;
+            const y = window.scrollY;
+            const t = Math.max(0, Math.min(1, 1 - y / (heroH * 0.6)));
+            setOpacity(t);
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
+    return (
+        <div className="hero-3d" style={{ opacity }}>
+            <Canvas 
+                camera={{ position: [0, 2.6, 7], fov: 55 }} 
+                dpr={[1, 1.5]}
+                gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
+                style={{ width: '100%', height: '100%' }}
+            >
+                <ambientLight intensity={0.55} />
+                <directionalLight position={[5, 7, 5]} intensity={0.9} />
+                <RotatingStars />
+                <Planet />
+                <OrbitControls enableZoom={false} enablePan={false} />
+            </Canvas>
+        </div>
+    );
 } 

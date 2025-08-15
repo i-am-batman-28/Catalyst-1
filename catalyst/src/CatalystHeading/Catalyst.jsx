@@ -1,13 +1,18 @@
 import './heading.css';
-import textImage from '../assets/4.PNG';
-
 function Catalyst() {
     return (
-        <div className = "catalyst">
-            <img src={textImage} alt="Catalyst Heading" />
+        <div className="catalyst-heading-container">
+            <div className="catalyst-subtitle">IIIT Sri City Presents</div>
+            <h1 className="catalyst-title">Catalyst</h1>
+            <div className="catalyst-tagline">
+                <span>Ignite</span>
+                <span className="divider" aria-hidden="true">|</span>
+                <span>Accelerate</span>
+                <span className="divider" aria-hidden="true">|</span>
+                <span>Achieve</span>
+            </div>
         </div>
     );
-
 }
 
 export default Catalyst;

@@ -24,9 +24,7 @@
   min-height: 100vh;
   z-index: -1;
   pointer-events: none;
-  background:
-    radial-gradient(60% 50% at 50% 30%, rgba(70,194,255,0.12), rgba(0,0,0,0)) ,
-    radial-gradient(80% 70% at 50% 120%, rgba(255,106,213,0.12), rgba(0,0,0,0));
+  background: #0b0d12;
 }
 
 .bg-grid::after {
@@ -34,8 +32,23 @@
   position: absolute;
   inset: 0;
   background:
-    repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 40px),
-    repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 40px);
+    /* subtle star field */
+    radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.18) 50%, transparent 51%),
+    radial-gradient(1px 1px at 80px 120px, rgba(255,255,255,0.15) 50%, transparent 51%),
+    radial-gradient(1px 1px at 200px 50px, rgba(255,255,255,0.16) 50%, transparent 51%),
+    radial-gradient(1px 1px at 250px 200px, rgba(255,255,255,0.12) 50%, transparent 51%),
+    radial-gradient(1px 1px at 10px 220px, rgba(255,255,255,0.14) 50%, transparent 51%),
+    /* grid lines on top */
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 40px);
+  background-size:
+    200px 200px,
+    300px 300px,
+    400px 400px,
+    500px 500px,
+    600px 600px,
+    auto,
+    auto;
   mask-image: radial-gradient(100% 60% at 50% 50%, black 60%, transparent 100%);
 }
 
@@ -53,8 +66,9 @@
 
 .hero {
   position: relative;
-  min-height: 72vh;
-  padding-top: 88px;
+  min-height: 100vh; /* cover entire first viewport */
+  padding-top: 15px; /* put navbar flush to the top */
+  overflow: hidden; /* keep hero effects contained */
 }
 
 .hero-3d {
@@ -64,11 +78,14 @@
   height: 100vh;
   z-index: 0;
   pointer-events: none;
+  /* fade is now handled via scroll opacity in LabHero.jsx */
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
+  /* Prevent margin-collapsing from first child pushing this block down */
+  padding-top: 1px;
 }
 
 .TimeLine {
