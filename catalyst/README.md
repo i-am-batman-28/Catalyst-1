@@ -2,7 +2,7 @@
 
 Premium, modern event homepage for IIIT Sri City’s E-Cell's Catalyst event, 2025. Built with React + Vite and designed for fast loads, beautiful visuals, and smooth navigation.
 
-Live (Vercel): add your deployed URL here
+Live (Vercel): https://catalyst-25.vercel.app
 
 ## Highlights
 
