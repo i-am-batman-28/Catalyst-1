@@ -80,22 +80,68 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .catalyst-tagline { gap: 16px; font-size: clamp(16px, 4vw, 22px); margin-top: 18px; font-weight: 800; }
-    .catalyst-subtitle { font-size: clamp(12px, 2.8vw, 16px); margin-bottom: 8px; }
+    .catalyst-tagline { 
+        gap: 14px; 
+        font-size: clamp(15px, 3.8vw, 20px); 
+        margin-top: 16px; 
+        font-weight: 700; 
+    }
+    .catalyst-subtitle { 
+        font-size: clamp(11px, 2.5vw, 15px); 
+        margin-bottom: 12px; 
+        letter-spacing: 0.06em;
+    }
     .catalyst-title {
-        font-size: clamp(3rem, 8vw, 5rem);
-        letter-spacing: 0.01em;
-        transform: scaleX(1.03);
+        font-size: clamp(3.5rem, 12vw, 5.5rem);
+        letter-spacing: 0.005em;
+        transform: scaleX(1.05);
+        line-height: 0.9;
+        text-shadow: 0 0 30px rgba(70, 194, 255, 0.4);
     }
 
     .catalyst-heading-container {
-        margin-top: clamp(140px, 22vh, 240px);
+        margin-top: clamp(120px, 20vh, 200px);
+        margin-bottom: 30px;
+    }
+    
+    /* Adjust spotlight for mobile */
+    .catalyst-heading-container::before {
+        width: min(900px, 85vw);
+        height: min(450px, 45vw);
+        filter: blur(24px);
+        opacity: 0.8;
     }
 }
 
 @media (max-width: 480px) {
     .catalyst-title {
-        font-size: clamp(2.2rem, 9vw, 3.2rem);
-        transform: scaleX(1.02);
+        font-size: clamp(2.8rem, 14vw, 4rem);
+        transform: scaleX(1.03);
+        line-height: 0.85;
+        letter-spacing: 0;
+    }
+    
+    .catalyst-tagline {
+        gap: 12px;
+        font-size: clamp(13px, 4.2vw, 18px);
+        margin-top: 14px;
+    }
+    
+    .catalyst-subtitle {
+        font-size: clamp(10px, 3vw, 14px);
+        margin-bottom: 10px;
+    }
+    
+    .catalyst-heading-container {
+        margin-top: clamp(100px, 18vh, 160px);
+        margin-bottom: 25px;
+    }
+    
+    /* Smaller spotlight for very small screens */
+    .catalyst-heading-container::before {
+        width: min(700px, 90vw);
+        height: min(350px, 50vw);
+        filter: blur(20px);
+        opacity: 0.7;
     }
 }
