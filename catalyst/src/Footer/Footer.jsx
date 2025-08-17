@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import karthikImg from '../assets/karthik.jpg';
+import { HiOutlineMail, HiOutlineUser, HiOutlinePhone, HiOutlineLocationMarker } from 'react-icons/hi';
 
 export default function Footer() {
   return (
@@ -12,7 +13,7 @@ export default function Footer() {
             Have questions or need assistance? Reach out to us using the contact information below.
           </p>
         </div>
-        
+
         <div className="footer-content">
           <div className="contact-form-section">
             <h3 className="form-title">Send us a message</h3>
@@ -32,45 +33,58 @@ export default function Footer() {
               <button type="submit" className="send-button">Send Message</button>
             </form>
           </div>
-          
+
           <div className="contact-info-section">
             <h3 className="info-title">Contact Information</h3>
             <div className="contact-details">
               <div className="contact-item">
-                <span className="contact-icon">✉</span>
-                <a href="mailto:ecell@iiits.in" className="contact-link">
-                  ecell@iiits.in
-                </a>
+                <HiOutlineMail className="contact-icon" />
+                <a href="mailto:ecell@iiits.in" className="contact-link">ecell@iiits.in</a>
               </div>
               <div className="contact-item">
-                <span className="contact-icon">👤</span>
+                <HiOutlineUser className="contact-icon" />
                 <div className="contact-person">
-                  <span className="contact-text">Deraj Yojith</span>
-                  <span className="contact-email">derajyojith.r22@iiits.in</span>
+                  <span className="contact-text">Prajwal</span>
+                  <span className="contact-email">prajwal.g24@iiits.in</span>
                 </div>
               </div>
               <div className="contact-item">
-                <span className="contact-icon">👤</span>
+                <HiOutlineUser className="contact-icon" />
                 <div className="contact-person">
-                  <span className="contact-text">Venkata Rahul</span>
-                  <span className="contact-email">venkatarahul.v23@iiits.in</span>
+                  <span className="contact-text">Pranav</span>
+                  <span className="contact-email">venkatasaipranav.m24@iiits.in</span>
                 </div>
               </div>
               <div className="contact-item">
-                <span className="contact-icon">👤</span>
+                <HiOutlineUser className="contact-icon" />
                 <div className="contact-person">
-                  <span className="contact-text">Poorvaj Pranav</span>
-                  <span className="contact-email">poorvajpranav.b23@iiits.in</span>
+                  <span className="contact-text">Gokul</span>
+                  <span className="contact-email">gokulkrishna.g24@iiits.in</span>
+                  <div className="contact-phone-wrapper">
+                    <HiOutlinePhone className="contact-phone" /> 
+                    <span className="phone-number">+91 91103 71898</span>
+                  </div>
                 </div>
               </div>
               <div className="contact-item">
-                <span className="contact-icon">📍</span>
+                <HiOutlineUser className="contact-icon" />
+                <div className="contact-person">
+                  <span className="contact-text">Akhil</span>
+                  <span className="contact-email">venkatasaiakhil.g24@iiits.in</span>
+                  <div className="contact-phone-wrapper">
+                    <HiOutlinePhone className="contact-phone" /> 
+                    <span className="phone-number">+91 70136 63827</span>
+                  </div>
+                </div>
+              </div>
+              <div className="contact-item">
+                <HiOutlineLocationMarker className="contact-icon" />
                 <span className="contact-text">IIIT Sri City, Andhra Pradesh, India</span>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div className="footer-bottom">
           <div className="contributors-section">
             <h3 className="contributors-title">Contributors of this website</h3>
