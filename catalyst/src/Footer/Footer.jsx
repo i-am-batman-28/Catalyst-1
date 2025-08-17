@@ -173,7 +173,10 @@ export default function Footer() {
               <div className="contributor-avatar">
                 <img src={karthikImg} alt="Karthik M Sarma" className="contributor-image" />
               </div>
-              <span className="contributor-name">Karthik M Sarma</span>
+              <div className="contributor-info">
+                <span className="contributor-name">Karthik M Sarma</span>
+                <span className="contributor-phone">+91 7899336201</span>
+              </div>
             </div>
           </div>
           <p className="footer-copyright">© 2025 E Cell IIITS. All rights reserved.</p>

@@ -276,11 +276,27 @@
   object-fit: cover;
 }
 
+.contributor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  text-align: center;
+}
+
 .contributor-name {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 1.2rem; /* larger name text */
   font-weight: 600;
   color: rgba(255, 255, 255, 0.95);
+}
+
+.contributor-phone {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.85rem; /* smaller font for phone */
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.02em;
 }
 
 .footer-copyright {
