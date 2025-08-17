@@ -1,9 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Footer.css';
 import karthikImg from '../assets/karthik.jpg';
 import { HiOutlineMail, HiOutlineUser, HiOutlinePhone, HiOutlineLocationMarker } from 'react-icons/hi';
 
 export default function Footer() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('');
+
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setSubmitStatus('Please fill in all fields');
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`Catalyst Event Inquiry from ${formData.name}`);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      );
+      const mailtoLink = `mailto:ecell@iiits.in?subject=${subject}&body=${body}`;
+      
+      // Open email client
+      window.open(mailtoLink);
+      
+      // Reset form
+      setFormData({ name: '', email: '', message: '' });
+      setSubmitStatus('Email client opened! Please send the email.');
+      
+    } catch (error) {
+      setSubmitStatus('Error opening email client. Please contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <footer id="contact" className="footer-section">
       <div className="footer-container">
@@ -17,20 +67,51 @@ export default function Footer() {
         <div className="footer-content">
           <div className="contact-form-section">
             <h3 className="form-title">Send us a message</h3>
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Your Name</label>
-                <input type="text" id="name" placeholder="Enter your name" />
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  placeholder="Enter your name" 
+                  required
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Your Email</label>
-                <input type="email" id="email" placeholder="Enter your email" />
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="Enter your email" 
+                  required
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="message">Message</label>
-                <textarea id="message" rows="4" placeholder="Enter your message"></textarea>
+                <textarea 
+                  id="message" 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  rows="4" 
+                  placeholder="Enter your message"
+                  required
+                ></textarea>
               </div>
-              <button type="submit" className="send-button">Send Message</button>
+              {submitStatus && (
+                <div className={`form-status ${submitStatus.includes('Error') ? 'error' : 'success'}`}>
+                  {submitStatus}
+                </div>
+              )}
+              <button type="submit" className="send-button" disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+              </button>
             </form>
           </div>
 
