@@ -46,11 +46,11 @@ function LearnMore() {
                             <div className="cta-buttons">
                                 <a
                                     className="btn-primary"
-                                    href="https://forms.gle/gtR6BaHX4zwGVMR59"
+                                    href="/judges"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    Register Now
+                                    Meet the Judges
                                 </a>
                             </div>
                         </div>

@@ -68,3 +68,31 @@
     border-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.1);
 }
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+    .register-btn-row {
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 120px;
+    }
+    
+    .register-button {
+        width: 100%;
+        max-width: 280px;
+        padding: 16px 32px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-btn-row {
+        margin-top: 100px;
+    }
+    
+    .register-button {
+        padding: 14px 24px;
+        font-size: 14px;
+        min-width: 160px;
+    }
+}

@@ -7,6 +7,7 @@ import Header from './Header/Header.jsx'
 import LabHero from './AuroraHero/LabHero.jsx'
 import EventTimeline from './EventTimeline/EventTimeline.jsx'
 import LearnMore from './LearnMore/LearnMore.jsx'
+import Judges from './Judges/Judges.jsx'
 import CornerLogo from './CornerLogo/CornerLogo.jsx'
 import Footer from './Footer/Footer.jsx'
 
@@ -42,6 +43,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/learn-more" element={<LearnMore />} />
+        <Route path="/judges" element={<Judges />} />
       </Routes>
     </Router>
   )
