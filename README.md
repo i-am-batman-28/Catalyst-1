@@ -1,4 +1,4 @@
-# Catalyst – Event Homepage (Repository)
+# Catalyst – Event Homepage 
 
 This repository hosts the Catalyst event website for IIIT Sri City’s E‑Cell. The React + Vite application lives inside the `catalyst/` directory.
 
